@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+		<title><%= "#{current_page.data.title} | #{settings.title}" || settings.title %></title>
+
+    <%#= stylesheet_link_tag "normalize", "foundation", "all" %>
+    <%= stylesheet_link_tag 'essential' %>
+    <%#= favicon_tag 'images/favicon.ico' %>
+
+    <%#= javascript_include_tag "all" %>
+  </head>
+
+  <body class="<%= page_classes %>">
+
+    <%= yield %>
+    <%= javascript_include_tag 'all' %>
+    
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
+
+<%# As suggested in https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery %>
+<noscript><%= stylesheet_link_tag 'deferred' %></noscript>
+<noscript><img src="https://piwik.life.at/piwik.php?idsite=<%= settings.piwik_id %>&amp;rec=1" style="border:0" alt="" /></noscript>
+<script>
+    var head = document.getElementsByTagName("head")[0];
+    var noscript = document.getElementsByTagName("noscript")[0];
+    head.insertAdjacentHTML('beforeend', noscript.innerHTML);
+</script>
