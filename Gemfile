@@ -9,5 +9,12 @@ gem "middleman-minify-html"
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
 
+
+# Templating Languages
+# See http://middlemanapp.com/basics/templates/#toc_9 for a full list
+
 # Textile support
 gem 'RedCloth'
+
+# Slim support
+gem 'slim'
