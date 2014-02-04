@@ -1,6 +1,5 @@
-//= require vendor/custom.modernizr.js
+//= require vendor/modernizr.js
 //= require vendor/jquery.js
-//# require foundation/index.js
 /*
 = require foundation/foundation
 require foundation/foundation.clearing
