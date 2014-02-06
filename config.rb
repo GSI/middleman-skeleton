@@ -47,11 +47,19 @@ activate :thumbnailer,
   :include_data_thumbnails => true, :namespace_directory => %w(gallery)
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  # http://forum.middlemanapp.com/t/direct-image-tag-to-look-in-the-current-directory/1084/2
+  def image_resources_in(dir)
+    image_exts = %w{ jpg gif jpeg png }
+
+    sitemap.resources.select do |resource|
+      resource_dir = File.dirname(resource.path)
+      resource_ext = File.extname(resource.path)[1..-1].downcase
+      dir == resource_dir && image_exts.include?(resource_ext)
+    end
+  end
+end
+
 
 set :css_dir, 'stylesheets'
 
