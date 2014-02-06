@@ -38,6 +38,14 @@
 # Reload the browser automatically whenever files change
 # activate :livereload
 
+# Generate thumbnail versions of your jpeg & png images
+activate :thumbnailer,
+  :dimensions => {
+    :small => 'x100',
+    :medium => '400x300'
+  },
+  :include_data_thumbnails => true, :namespace_directory => %w(gallery)
+
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper

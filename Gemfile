@@ -9,6 +9,8 @@ gem "middleman-minify-html"
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
 
+# Generate thumbnail versions of your jpeg & png images
+gem 'middleman-thumbnailer', :git => 'git://github.com/nhemsley/middleman-thumbnailer.git'
 
 # Templating Languages
 # See http://middlemanapp.com/basics/templates/#toc_9 for a full list
