@@ -50,6 +50,7 @@
 helpers do
   # http://forum.middlemanapp.com/t/direct-image-tag-to-look-in-the-current-directory/1084/2
   def image_resources_in(dir, recursive = false)
+    dir = "#{settings.images_dir}/#{dir}"
     image_exts = %w{ jpg gif jpeg png }
 
     images = sitemap.resources.select do |resource|
