@@ -9,7 +9,7 @@
 
 
 body:after {
-  content: url() <%# image_resources_in("#{settings.images_dir}/PATH_HERE", true).each do |img| %>
+  content: url() <%# image_resources_in('PATH_HERE', true).each do |img| %>
                    <%#= " url(#{img.path}) " %>
                  <%# end %>;
   display: none;
