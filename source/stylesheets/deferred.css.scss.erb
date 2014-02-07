@@ -6,3 +6,11 @@
 //@import
   // "foundation/components/COMPONENT1",
   // "foundation/components/COMPONENT2";
+
+
+body:after {
+  content: url() <%# image_resources_in("#{settings.images_dir}/PATH_HERE", true).each do |img| %>
+                   <%#= " url(#{img.path}) " %>
+                 <%# end %>;
+  display: none;
+}

@@ -49,13 +49,22 @@
 # Methods defined in the helpers block are available in templates
 helpers do
   # http://forum.middlemanapp.com/t/direct-image-tag-to-look-in-the-current-directory/1084/2
-  def image_resources_in(dir)
+  def image_resources_in(dir, recursive = false)
     image_exts = %w{ jpg gif jpeg png }
 
     images = sitemap.resources.select do |resource|
       resource_dir = File.dirname(resource.path)
       resource_ext = File.extname(resource.path)[1..-1].downcase
-      dir == resource_dir && image_exts.include?(resource_ext)
+      
+      path_verified = false
+
+      if recursive
+        path_verified = resource_dir.start_with?(dir)
+      else
+        path_verified = dir.eql?(resource_dir)
+      end
+
+      path_verified && image_exts.include?(resource_ext)
     end
 
     images.sort_by(&:source_file)
