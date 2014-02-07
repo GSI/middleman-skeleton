@@ -52,11 +52,13 @@ helpers do
   def image_resources_in(dir)
     image_exts = %w{ jpg gif jpeg png }
 
-    sitemap.resources.select do |resource|
+    images = sitemap.resources.select do |resource|
       resource_dir = File.dirname(resource.path)
       resource_ext = File.extname(resource.path)[1..-1].downcase
       dir == resource_dir && image_exts.include?(resource_ext)
     end
+
+    images.sort_by(&:source_file)
   end
 end
 
