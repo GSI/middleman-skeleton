@@ -111,5 +111,6 @@ configure :build do
 end
 
 
+set :domain, ''
 set :title, ''
 set :piwik_id, '0'
