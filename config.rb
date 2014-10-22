@@ -113,5 +113,5 @@ end
 
 set :domain, ''
 set :title, ''
-set :piwik_url, 'piwik.example.org'
+set :piwik_host, 'piwik.example.org'
 set :piwik_id, '0'

@@ -32,7 +32,7 @@
 
 <%# As suggested in https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery %>
 <noscript><%= stylesheet_link_tag 'deferred' %></noscript>
-<noscript><img src="http://<%= settings.piwik_url %>/piwik.php?idsite=<%= settings.piwik_id %>&amp;rec=1" style="border:0" alt="" /></noscript>
+<noscript><img src="http://<%= settings.piwik_host %>/piwik.php?idsite=<%= settings.piwik_id %>&amp;rec=1" style="border:0" alt="" /></noscript>
 <script>
     var head = document.getElementsByTagName("head")[0];
     var noscript = document.getElementsByTagName("noscript")[0];
