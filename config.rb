@@ -36,7 +36,7 @@
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-# activate :livereload
+activate :livereload
 
 # Generate thumbnail versions of your jpeg & png images
 #activate :thumbnailer,
@@ -49,13 +49,13 @@
 # Methods defined in the helpers block are available in templates
 helpers do
   # http://forum.middlemanapp.com/t/direct-image-tag-to-look-in-the-current-directory/1084/2
-  def image_resources_in(dir, recursive = false)
+  def image_resources_in(dir, recursive)
     dir = "#{settings.images_dir}/#{dir}"
     image_exts = %w{ jpg gif jpeg png }
 
     images = sitemap.resources.select do |resource|
       resource_dir = File.dirname(resource.path)
-      resource_ext = File.extname(resource.path)[1..-1].downcase
+      resource_ext = File.extname(resource.path)[1..-1].try(:downcase)
       
       path_verified = false
 
@@ -113,4 +113,5 @@ end
 
 set :domain, ''
 set :title, ''
+set :piwik_url, 'piwik.example.org'
 set :piwik_id, '0'
