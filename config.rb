@@ -39,6 +39,7 @@
 activate :livereload
 
 activate :i18n
+activate :sitemap
 
 # Generate thumbnail versions of your jpeg & png images
 #activate :thumbnailer,

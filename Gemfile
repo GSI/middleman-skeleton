@@ -7,6 +7,9 @@ gem "middleman", "~> 3.3.5"
 gem "middleman-imageoptim", "~> 0.1.3"
 gem "middleman-minify-html"
 
+# Builds a sitemap.xml for your site
+gem 'middleman-sitemap'
+
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
 
