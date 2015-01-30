@@ -2,7 +2,8 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-gem "middleman", "~>3.2.1"
+gem "compass", "~> 0.12.2"
+gem "middleman", "~> 3.3.5"
 gem "middleman-imageoptim", "~> 0.1.3"
 gem "middleman-minify-html"
 
@@ -20,3 +21,6 @@ gem 'RedCloth'
 
 # Slim support
 gem 'slim'
+
+# This library is wrapper for the Exiftool command-line application (http://www.sno.phy.queensu.ca/~phil/exiftool).
+gem 'mini_exiftool'

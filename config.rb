@@ -38,6 +38,8 @@
 # Reload the browser automatically whenever files change
 activate :livereload
 
+activate :i18n
+
 # Generate thumbnail versions of your jpeg & png images
 #activate :thumbnailer,
 #  :dimensions => {
@@ -48,6 +50,7 @@ activate :livereload
 
 # Methods defined in the helpers block are available in templates
 helpers do
+
   # http://forum.middlemanapp.com/t/direct-image-tag-to-look-in-the-current-directory/1084/2
   def image_resources_in(dir, recursive)
     dir = "#{settings.images_dir}/#{dir}"
@@ -70,6 +73,16 @@ helpers do
 
     images.sort_by(&:source_file)
   end
+
+  def localized_exif_title(img_path)
+    # NOTE Set like this: exiftool -title='{"es": "Vista gimnasio", "de": "Ausblick Fitnessraum" , "en": "View from gym"}' 05_edificio_vista_gimnasio_20130924_130109.jpg %>
+    begin
+      JSON.parse(MiniExiftool.new(img_path).title)[I18n.locale.to_s] if MiniExiftool.new(img_path).title
+    rescue JSON::ParserError
+      MiniExiftool.new(img_path).title
+    end
+  end
+
 end
 
 

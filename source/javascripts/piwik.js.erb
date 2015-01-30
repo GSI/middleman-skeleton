@@ -7,7 +7,7 @@ _paq.push(['enableLinkTracking']);
   _paq.push(['setTrackerUrl', u+'piwik.php']);
   _paq.push(["setSiteId", <%= settings.piwik_id %>]);
   var d = document, g = d.createElement("script"), s = d.getElementsByTagName("script")[0];
-  <%# NOTE: 'piwik.'+'js' is a workaround that prevents conversion to a hashed variant of the asset pipeline. Keep it. %>
+  <%# NOTE: 'piwik.'+'js' is a workaround that prevents conversion to a hashed variant of the asset pipeline (eg. 'piwik-19223109.js'). Keep it. %>
   g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.'+'js'; s.parentNode.insertBefore(g,s);
 })();
 
