@@ -39,7 +39,6 @@
 activate :livereload
 
 activate :i18n
-activate :sitemap
 
 # Generate thumbnail versions of your jpeg & png images
 #activate :thumbnailer,
@@ -93,6 +92,8 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
+domain=''
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
@@ -116,6 +117,8 @@ configure :build do
 	# Minify HTML
 	activate :minify_html
 
+  activate :sitemap, :hostname => "http://#{domain}"
+
 	# Compress images
 	# IMPORTANT: Install binaries as explained at
 	# https://github.com/toy/image_optim#binaries-installation
@@ -125,7 +128,7 @@ configure :build do
 end
 
 
-set :domain, ''
+set :domain, domain
 set :title, ''
 set :piwik_host, 'piwik.example.org'
 set :piwik_id, '0'
