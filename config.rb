@@ -38,7 +38,9 @@
 # Reload the browser automatically whenever files change
 activate :livereload
 
-activate :i18n
+# Internationalization - with all languages prefixed
+activate :i18n, :mount_at_root => false
+
 
 # Generate thumbnail versions of your jpeg & png images
 #activate :thumbnailer,
