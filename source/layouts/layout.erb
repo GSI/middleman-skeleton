@@ -19,7 +19,13 @@
     <%#= javascript_include_tag "all" %>
   </head>
 
-  <body class="<%= page_classes %>">
+  <body class="no-js <%= page_classes %>">
+    <%# The following script switches the html-class from "no-js" to "js" in
+        case JavaScript is supported.
+        See http://www.paulirish.com/2009/avoiding-the-fouc-v3/ for details. %>
+    <script type="text/javascript">(function (H) {
+      H.className = H.className.replace(/\bno-js\b/, 'js')
+    })(document.body)</script>
 
     <%= yield %>
     <%= javascript_include_tag 'all' %>
