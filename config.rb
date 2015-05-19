@@ -54,7 +54,8 @@ activate :i18n, :mount_at_root => false
 helpers do
   def menu_item(label, path)
     content_tag :li, :class => "#{current_page.url == path ? 'current' : ''}" do
-      link_to label, path
+      # to_url() is provided by Stringex gem
+      link_to label, path, class: label.to_url
     end
   end
 

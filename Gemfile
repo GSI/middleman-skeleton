@@ -25,5 +25,8 @@ gem 'RedCloth'
 # Slim support
 gem 'slim'
 
+# Some [hopefully] useful extensions to Ruby's String class.
+gem 'stringex', '~> 2.5.2', require: 'stringex_lite'
+
 # This library is wrapper for the Exiftool command-line application (http://www.sno.phy.queensu.ca/~phil/exiftool).
 gem 'mini_exiftool'
