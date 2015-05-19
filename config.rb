@@ -52,6 +52,11 @@ activate :i18n, :mount_at_root => false
 
 # Methods defined in the helpers block are available in templates
 helpers do
+  def menu_item(label, path)
+    content_tag :li, :class => "#{current_page.url == path ? 'current' : ''}" do
+      link_to label, path
+    end
+  end
 
   # http://forum.middlemanapp.com/t/direct-image-tag-to-look-in-the-current-directory/1084/2
   def image_resources_in(dir, recursive)
