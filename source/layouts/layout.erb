@@ -2,13 +2,14 @@
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="en" >
   <head>
-    <link href="http://<%= settings.domain %>/<%= current_page.path %>" rel="canonical" />
+    <link href="http://<%= config.domain %>/<%= current_page.path %>" rel="canonical" />
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
-    <title><%= "#{current_page.data.title} | #{settings.title}" || settings.title %></title>
+    <% page_title = current_page.data.title || I18n.t("#{current_page.data.id}.title") %>
+    <title><%= page_title ? "#{page_title} | #{config.title}" : config.title %></title>
 
     <%#= stylesheet_link_tag "normalize", "foundation", "all" %>
     <%= stylesheet_link_tag 'essential' %>
@@ -36,7 +37,7 @@
 
 <%# As suggested in https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery %>
 <noscript><%= stylesheet_link_tag 'deferred' %></noscript>
-<noscript><img src="http://<%= settings.piwik_host %>/piwik.php?idsite=<%= settings.piwik_id %>&amp;rec=1" style="border:0" alt="" /></noscript>
+<noscript><img src="http://<%= config.piwik_host %>/piwik.php?idsite=<%= config.piwik_id %>&amp;rec=1" style="border:0" alt="" /></noscript>
 <script>
     var head = document.getElementsByTagName("head")[0];
     var noscript = document.getElementsByTagName("noscript")[0];
