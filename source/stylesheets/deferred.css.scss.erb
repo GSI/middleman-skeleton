@@ -1,13 +1,6 @@
 // Make sure the charset is set appropriately
 @charset "UTF-8";
 
-// Foundation Components
-// Be aware that some parts may already be loaded in essential.scss or entirely unnecessary.
-//@import
-  // "foundation/components/COMPONENT1",
-  // "foundation/components/COMPONENT2";
-
-
 body:after {
   content: url() <%# image_resources_in('PATH_HERE', true).each do |img| %>
                    <%#= " url(#{img.path}) " %>
