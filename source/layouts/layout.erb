@@ -1,16 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="en" >
   <head>
     <link href="http://<%= settings.domain %>/<%= current_page.path %>" rel="canonical" />
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Always force latest IE rendering engine or request Chrome Frame -->
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-
-    <!-- Use title if it's in the page YAML frontmatter -->
-		<title><%= "#{current_page.data.title} | #{settings.title}" || settings.title %></title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title><%= "#{current_page.data.title} | #{settings.title}" || settings.title %></title>
 
     <%#= stylesheet_link_tag "normalize", "foundation", "all" %>
     <%= stylesheet_link_tag 'essential' %>
