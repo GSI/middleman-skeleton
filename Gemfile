@@ -5,9 +5,10 @@ gem 'middleman-autoprefixer', '~> 2.7'
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw]
 
-gem 'compass', '~> 0.12.2'
+#gem 'compass', '~> 0.12.2'
 
-gem 'middleman-imageoptim', '~> 0.1.3'
+# NOTE 2016-11-15  Deactivated middleman-imageoptim as it causes "NoMethodError: undefined method `build_dir'" upon "middleman build"
+#gem "middleman-imageoptim", "~> 0.2.1"
 gem 'middleman-minify-html'
 
 

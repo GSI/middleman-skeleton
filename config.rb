@@ -112,9 +112,11 @@ configure :build do
 	# Compress images
 	# IMPORTANT: Install binaries as explained at
 	# https://github.com/toy/image_optim#binaries-installation
-	activate :imageoptim do |options|
-		options.pngout_options    = false
-	end
+  # NOTE 2016-11-15  Deactivated middleman-imageoptim as it causes "NoMethodError: undefined method `build_dir'" upon "middleman build"
+  # TODO reactivate
+  #	activate :imageoptim do |options|
+  #		options.pngout    = false
+  #	end
 end
 
 
