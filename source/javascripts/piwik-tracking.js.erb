@@ -3,11 +3,9 @@ _paq.push(['trackPageView']);
 _paq.push(['enableLinkTracking']);
 
 (function() {
-  var u = "//<%= settings.piwik_host %>/";
+  var u = "//<%= app.config.piwik_host %>/";
   _paq.push(['setTrackerUrl', u+'piwik.php']);
-  _paq.push(["setSiteId", <%= settings.piwik_id %>]);
+  _paq.push(["setSiteId", <%= app.config.piwik_id %>]);
   var d = document, g = d.createElement("script"), s = d.getElementsByTagName("script")[0];
-  <%# NOTE: 'piwik.'+'js' is a workaround that prevents conversion to a hashed variant of the asset pipeline (eg. 'piwik-19223109.js'). Keep it. %>
-  g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.'+'js'; s.parentNode.insertBefore(g,s);
+  g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
 })();
-
