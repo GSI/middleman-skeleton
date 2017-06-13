@@ -11,6 +11,7 @@ gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw]
 #gem "middleman-imageoptim", "~> 0.2.1"
 gem 'middleman-minify-html'
 
+gem 'middleman-sprockets', '~> 4.0.0'
 
 # Builds a sitemap.xml for your site
 gem 'middleman-sitemap'

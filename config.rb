@@ -123,6 +123,7 @@ end
 # Internationalization - with all languages prefixed
 activate :i18n, :mount_at_root => false
 
+activate :sprockets
 
 set :domain, domain
 set :title, ''
