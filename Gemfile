@@ -14,7 +14,8 @@ gem 'middleman-minify-html'
 gem 'middleman-sprockets', '~> 4.0.0'
 
 # Builds a sitemap.xml for your site
-gem 'middleman-sitemap'
+# NOTE 2017-04-19  Switched to matsu911's fork of middleman-sitemap as it works with MM4 (see VL #1868)
+gem 'middleman-sitemap', git: 'https://github.com/matsu911/middleman-sitemap'
 
 # Generate thumbnail versions of your jpeg & png images
 #gem 'middleman-thumbnailer', :git => 'git://github.com/nhemsley/middleman-thumbnailer.git'

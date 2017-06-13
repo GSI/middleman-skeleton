@@ -107,7 +107,9 @@ configure :build do
 	# Minify HTML
 	activate :minify_html
 
+  # NOTE 2017-04-19  Switched to matsu911's fork of middleman-sitemap as it works with MM4 (see VL #1868)
   activate :sitemap, :hostname => "http://#{domain}"
+
 
 	# Compress images
 	# IMPORTANT: Install binaries as explained at
