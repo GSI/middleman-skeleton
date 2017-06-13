@@ -8,8 +8,8 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
-    <% page_title = current_page.data.title || I18n.t("#{current_page.data.id}.title") %>
-    <title><%= page_title ? "#{page_title} | #{config.title}" : config.title %></title>
+    <% page_title = current_page.data.title || I18n.t("#{current_page.data.id}.title", default: '') %>
+    <title><%= page_title.empty? ? config.title : "#{page_title} | #{config.title}" %></title>
 
     <%#= stylesheet_link_tag "normalize", "foundation", "all" %>
     <%= stylesheet_link_tag 'essential' %>
