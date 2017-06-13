@@ -1,6 +1,4 @@
 //= require vendor/modernizr.js
 //= require vendor/jquery.js
-/*
-= require piwik
-*/
+//= require piwik-tracking
 //= require_directory
